@@ -1,3 +1,5 @@
+import time
+
 from django.shortcuts import render
 
 # Create your views here.
@@ -12,4 +14,8 @@ from django.http import *
 
 
 def index(request):
-    return HttpResponse('ok')
+    # return HttpResponse(time.strftime('%Y-%m-%d %H:%M:%S'))
+    context = {
+        'name': '马上双11,点击有惊喜'
+    }
+    return render(request, 'book/index.html', context=context)
